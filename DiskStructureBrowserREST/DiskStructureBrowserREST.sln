@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiskStructureBrowserREST", "DiskStructureBrowserREST\DiskStructureBrowserREST.csproj", "{7E0999B6-BA85-4080-A78E-715F13541FD5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E0999B6-BA85-4080-A78E-715F13541FD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E0999B6-BA85-4080-A78E-715F13541FD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E0999B6-BA85-4080-A78E-715F13541FD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E0999B6-BA85-4080-A78E-715F13541FD5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A4EFA27-887D-4ED8-92AB-5B4679DB035D}
+	EndGlobalSection
+EndGlobal
