@@ -12,7 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "directorycontent/elements/D%3A%5CProjekty%5CDiskStructureBrowser%5CDiskStructureBrowser",
+      "launchUrl": "main",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
