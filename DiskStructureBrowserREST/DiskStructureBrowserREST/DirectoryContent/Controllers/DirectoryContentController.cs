@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using DiskStructureBrowserREST.Models;
 using System.IO;
+using System.Text.Json;
+using DiskStructureBrowserREST.DirectoryContent.Models;
 
 namespace DiskStructureBrowserREST.Controllers
 {
@@ -13,16 +13,18 @@ namespace DiskStructureBrowserREST.Controllers
     [Route("[controller]")]
     public class DirectoryContentController : ControllerBase
     {
-        [Route("elements/{path}")]
-        [HttpGet]
-        public IEnumerable<Element> Get(string path)
+        [Route("elements")]
+        [HttpPut]
+        public IEnumerable<Element> Get([FromBody] JsonElement body)
         {
+            string json = JsonSerializer.Serialize(body);
+            GetBody getBody = JsonSerializer.Deserialize<GetBody>(json);
             var elements = new List<Element>();
-            foreach (string entry in Directory.GetDirectories(path))
+            foreach (string entry in Directory.GetDirectories(getBody.Path))
             {
                 elements.Add(CreateElement(new DirectoryInfo(entry)));
             }
-            foreach (string entry in Directory.GetFiles(path))
+            foreach (string entry in Directory.GetFiles(getBody.Path))
             {
                 elements.Add(CreateElement(new FileInfo(entry)));
             }
