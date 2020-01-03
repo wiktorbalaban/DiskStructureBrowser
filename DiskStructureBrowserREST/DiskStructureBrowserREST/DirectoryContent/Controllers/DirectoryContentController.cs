@@ -6,6 +6,7 @@ using DiskStructureBrowserREST.Models;
 using System.IO;
 using System.Text.Json;
 using DiskStructureBrowserREST.DirectoryContent.Models;
+using Newtonsoft.Json;
 
 namespace DiskStructureBrowserREST.Controllers
 {
@@ -17,8 +18,8 @@ namespace DiskStructureBrowserREST.Controllers
         [HttpPut]
         public IEnumerable<Element> Get([FromBody] JsonElement body)
         {
-            string json = JsonSerializer.Serialize(body);
-            GetBody getBody = JsonSerializer.Deserialize<GetBody>(json);
+            string json = System.Text.Json.JsonSerializer.Serialize(body);
+            GetBody getBody = JsonConvert.DeserializeObject<GetBody>(json);
             var elements = new List<Element>();
             foreach (string entry in Directory.GetDirectories(getBody.Path))
             {

@@ -8,7 +8,7 @@ import { map, catchError, tap } from 'rxjs/operators';
 })
 export class MainService {
 
-  endpoint = '/api/main';
+  endpoint = '/api/main/';
   httpOptions = {
   headers: new HttpHeaders({
       'Content-Type':  'application/json'

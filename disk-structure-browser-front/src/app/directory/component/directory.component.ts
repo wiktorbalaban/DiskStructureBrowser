@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MainService } from '../main.service';
+import { MainService } from '../../main.service';
+import { CurrentContext } from '../Models/CurrentContext';
 
 @Component({
   selector: 'app-directory',
@@ -8,12 +9,20 @@ import { MainService } from '../main.service';
 })
 export class DirectoryComponent implements OnInit {
 
+  currentContext: CurrentContext;
+
   constructor(private mainService: MainService) { }
 
   ngOnInit() {
     this.mainService.getRootPath().subscribe(result => {
       console.log('root path: ', result);
+      this.goToDirectory(result as string);
     });
   }
+
+  goToDirectory(path: string) {
+    this.currentContext = new CurrentContext(path);
+  }
+
 
 }
