@@ -10,7 +10,7 @@ using DiskStructureBrowserREST.DirectoryContent.Models;
 namespace DiskStructureBrowserREST.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class DirectoryContentController : ControllerBase
     {
         [Route("elements")]

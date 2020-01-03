@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DiskStructureBrowserREST.ElementManager.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class FileController : ControllerBase
     {

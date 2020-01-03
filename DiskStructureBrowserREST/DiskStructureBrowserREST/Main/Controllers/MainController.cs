@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace DiskStructureBrowserREST.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class MainController : ControllerBase
     {
@@ -19,7 +19,7 @@ namespace DiskStructureBrowserREST.Controllers
                 string json = r.ReadToEnd();
                 config = JsonConvert.DeserializeObject<Config>(json);
             }
-            return config.RootPath;
+            return JsonConvert.SerializeObject(config.RootPath);
         }
     }
 }
